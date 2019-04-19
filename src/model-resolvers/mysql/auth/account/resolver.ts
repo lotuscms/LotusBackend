@@ -36,7 +36,6 @@ export class AccountResolver {
 
     @FieldResolver(returns => [Characters])
     async characters(@Root() account: Account) {
-        console.log(account.id);
         return getCharactersByAccountId(account.id);
     }
 }
