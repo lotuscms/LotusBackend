@@ -1,0 +1,6 @@
+build/
+node_modules/
+conf.json
+logs/
+*.log
+ormconfig.1.json

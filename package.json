@@ -1,0 +1,49 @@
+{
+  "name": "lotus-backend",
+  "version": "1.0.0",
+  "description": "Back-End API for TrinityCore emulator.",
+  "main": "index.js",
+  "repository": "https://github.com/lotuscms/LotusBackend.git",
+  "author": "Casey Clayton",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "yarn watch",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "clean-build": "rm -rf build",
+    "build": "node barrel.js && yarn build-ts",
+    "build-ts": "yarn clean-build && tslint --project . && tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "serve": "nodemon --exec 'ts-node' -w src src/index.ts",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold\" \"yarn watch-ts\" \"yarn serve\"",
+    "watch-ts": "tsc -w",
+    "ts-node": "ts-node ./src/index.ts"
+  },
+  "dependencies": {
+    "graphql": "^14.2.1",
+    "locutus": "^2.0.10",
+    "mysql2": "^1.6.5",
+    "type-graphql": "^0.17.1",
+    "typedi": "^0.8.0",
+    "typeorm": "^0.2.16",
+    "typeorm-typedi-extensions": "^0.2.3"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.2.0",
+    "@types/jest": "^23.3.10",
+    "@types/locutus": "0.0.5",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^10.9.4",
+    "@types/node-cache": "^4.1.1",
+    "apollo-server": "^2.4.8",
+    "concurrently": "3.5.1",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.7",
+    "pbjs": "0.0.5",
+    "prettier": "^1.14.2",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.3.3333"
+  }
+}
