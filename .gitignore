@@ -3,4 +3,4 @@ node_modules/
 conf.json
 logs/
 *.log
-ormconfig.json
+ormconfig.private.json
