@@ -9,6 +9,7 @@ export function getAccountByEmail(email: string, relations: string[]): Promise<A
     return getRepository(Account, 'auth').findOne({ where: { email }, relations });
 }
 
+// TODO: Might not need all of these fields, refactor
 export function createAccount(
     email: string,
     password: string,
@@ -34,6 +35,10 @@ export function createAccount(
 
 export function deleteAccount(id: number): Promise<DeleteResult> {
     return getRepository(Account, 'auth').delete(id);
+}
+
+export function getAccountById(id: number): Promise<Account> {
+    return getRepository(Account, 'auth').findOne(id);
 }
 
 export async function updateAccountPassword(email: string, oldPassword: string, newPassword: string): Promise<Boolean> {

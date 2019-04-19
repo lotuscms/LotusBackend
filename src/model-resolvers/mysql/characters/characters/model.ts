@@ -1,9 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Field } from 'type-graphql';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Field, ObjectType } from 'type-graphql';
 import { Races, Gender, Classes } from './modelTypes';
-import { Account } from 'model-resolvers/mysql/auth/account/model';
 
 @Entity('characters')
+@ObjectType()
 export class Characters {
     @PrimaryGeneratedColumn()
     @Column('bigint', {
@@ -16,17 +16,19 @@ export class Characters {
     @Field()
     guid: number;
 
-    @ManyToOne(type => Account, account => account.id)
-    @JoinColumn({
+    @Column('int', {
+        nullable: false,
         name: 'account'
     })
-    account: Account;
+    @Field()
+    account: number;
 
     @Column('varchar', {
         nullable: false,
         default: '',
         name: 'name'
     })
+    @Field()
     name: string;
 
     @Column('tinyint', {
@@ -41,6 +43,7 @@ export class Characters {
         default: 0,
         name: 'race'
     })
+    @Field()
     race: Races;
 
     @Column('tinyint', {
@@ -48,6 +51,7 @@ export class Characters {
         default: 0,
         name: 'class'
     })
+    @Field()
     class: Classes;
 
     @Column('tinyint', {
@@ -55,6 +59,7 @@ export class Characters {
         default: 0,
         name: 'gender'
     })
+    @Field()
     gender: Gender;
 
     @Column('tinyint', {
@@ -62,6 +67,7 @@ export class Characters {
         default: 0,
         name: 'level'
     })
+    @Field()
     level: number;
 
     @Column('int', {
@@ -69,6 +75,7 @@ export class Characters {
         default: 0,
         name: 'xp'
     })
+    @Field()
     xp: number;
 
     @Column('bigint', {
@@ -76,6 +83,7 @@ export class Characters {
         default: 0,
         name: 'money'
     })
+    @Field()
     money: string;
 
     @Column('tinyint', {
@@ -244,6 +252,7 @@ export class Characters {
         default: 0,
         name: 'online'
     })
+    @Field()
     online: boolean;
 
     @Column('tinyint', {
@@ -291,16 +300,16 @@ export class Characters {
     @Column('int', {
         nullable: false,
         default: 0,
-        name: 'resttalents_cost'
+        name: 'resettalents_cost'
     })
-    restTalentsCost: number;
+    resetTalentsCost: number;
 
     @Column('int', {
         nullable: false,
         default: 0,
-        name: 'resttalents_time'
+        name: 'resettalents_time'
     })
-    restTalentsTime: number;
+    resetTalentsTime: number;
 
     @Column('int', {
         nullable: false,
@@ -425,6 +434,7 @@ export class Characters {
         default: 0,
         name: 'drunk'
     })
+    @Field()
     drunk: boolean;
 
     @Column('int', {
@@ -432,6 +442,7 @@ export class Characters {
         default: 0,
         name: 'health'
     })
+    @Field()
     health: number;
 
     @Column('int', {
@@ -548,6 +559,7 @@ export class Characters {
         default: null,
         name: 'deleteDate'
     })
+    @Field()
     deleteDate: number;
 
     @Column('int', {

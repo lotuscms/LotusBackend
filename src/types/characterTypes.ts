@@ -6,8 +6,8 @@ interface Race {
 export const RaceMap: { [name: string]: Race } = {
     human: { id: 1, value: 1, name: 'Human' },
     orc: { id: 2, value: 2, name: 'Orc' },
-    dwarf: { id: 3, value: 4, name: 'Dawrf' },
-    nigthElf: { id: 4, value: 8, name: 'Night Elf' },
+    dwarf: { id: 3, value: 4, name: 'Dwarf' },
+    nightElf: { id: 4, value: 8, name: 'Night Elf' },
     undead: { id: 5, value: 16, name: 'Undead' },
     tauren: { id: 6, value: 32, name: 'Tauren' },
     gnome: { id: 7, value: 64, name: 'Gnome' },
@@ -30,14 +30,14 @@ export const RaceMap: { [name: string]: Race } = {
     pandarenNeutral: { id: 24, value: 8388608, name: 'Pandaren Neutral' },
     pandarenAlliance: { id: 25, value: 16777216, name: 'Pandaren Alliance' },
     pandarenHorde: { id: 26, value: 33554432, name: 'Pandaren Horde' },
-    nightBourne: { id: 27, value: 67108864, name: 'Nightbourne' },
+    nightborne: { id: 27, value: 67108864, name: 'Nightbourne' },
     highMountainTauren: { id: 28, value: 134217728, name: 'Highmountain Tauren' },
     voidElf: { id: 29, value: 268435456, name: 'Void Elf' },
     lightForgedDraenei: { id: 30, value: 536870912, name: 'Lightforged Draenei' },
     zandalariTroll: { id: 31, value: 1073741824, name: 'Zandalari Troll' },
     kulTiran: { id: 32, value: 2147483648, name: 'Kul Tiran' },
     thinHuman: { id: 33, value: 4294967296, name: 'Thin Human' },
-    darkIronDawrf: { id: 34, value: 8589934592, name: 'Dark Iron Dawrf' },
+    darkIronDwarf: { id: 34, value: 8589934592, name: 'Dark Iron Dwarf' },
     vulpera: { id: 35, value: 17179869184, name: 'Vulpera' },
     magHarOrc: { id: 36, value: 34359738368, name: "Mag'har Orc" }
 };

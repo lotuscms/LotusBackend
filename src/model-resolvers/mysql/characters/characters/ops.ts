@@ -2,7 +2,7 @@ import { getRepository } from 'typeorm';
 import { Characters } from './model';
 import { Races } from './modelTypes';
 
-export function getCharactersByAccountId(id: number): Promise<Characters[]> {
+export async function getCharactersByAccountId(id: number): Promise<Characters[]> {
     return getRepository(Characters, 'characters').find({
         where: {
             account: id
