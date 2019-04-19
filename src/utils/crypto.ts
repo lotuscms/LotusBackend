@@ -21,9 +21,18 @@ export function encryptPassword(email: string, password: string): string {
     return php.strings.bin2hex(binary).toUpperCase();
 }
 
+export function encryptPasswordAzerCore(username: string, password: string): string {
+    return crypto
+        .createHash('sha1')
+        .update(`${username.toUpperCase()}:${password.toUpperCase()}`)
+        .digest('hex')
+        .toUpperCase();
+}
+
 export function hashSha1(email: string, password: string) {
     return crypto
         .createHash('sha1')
         .update(`${email.toUpperCase()}:${password}`)
-        .digest('hex').toUpperCase();
+        .digest('hex')
+        .toUpperCase();
 }
