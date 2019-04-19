@@ -60,6 +60,11 @@ export enum Classes {
 }
 
 // Register our enums so type-graphql knows about them
+registerEnumType(Gender, {
+    name: 'Gender',
+    description: 'The gender of the character'
+});
+
 registerEnumType(Races, {
     name: 'Races',
     description: 'The race of the character'

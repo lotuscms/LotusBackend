@@ -4,10 +4,10 @@
     {
         "name": "auth",
         "type": "mysql",
-        "host": "***REMOVED***",
+        "host": "",
         "port": "3306",
-        "username": "***REMOVED***",
-        "password": "***REMOVED***",
+        "username": "",
+        "password": "",
         "database": "auth",
         "synchronize": false,
         "entities": [
@@ -17,10 +17,10 @@
     {
         "name": "characters",
         "type": "mysql",
-        "host": "***REMOVED***",
+        "host": "",
         "port": "3306",
-        "username": "***REMOVED***",
-        "password": "***REMOVED***",
+        "username": "",
+        "password": "",
         "database": "characters",
         "synchronize": false,
         "entities": [

@@ -21,7 +21,7 @@ export class Characters {
         name: 'account'
     })
     @Field()
-    account: number;
+    accountId: number;
 
     @Column('varchar', {
         nullable: false,
@@ -43,7 +43,7 @@ export class Characters {
         default: 0,
         name: 'race'
     })
-    @Field()
+    @Field(type => Races)
     race: Races;
 
     @Column('tinyint', {
@@ -51,7 +51,7 @@ export class Characters {
         default: 0,
         name: 'class'
     })
-    @Field()
+    @Field(type => Classes)
     class: Classes;
 
     @Column('tinyint', {
@@ -59,7 +59,7 @@ export class Characters {
         default: 0,
         name: 'gender'
     })
-    @Field()
+    @Field(type => Gender)
     gender: Gender;
 
     @Column('tinyint', {

@@ -5,7 +5,7 @@ import { Races } from './modelTypes';
 export async function getCharactersByAccountId(id: number): Promise<Characters[]> {
     return getRepository(Characters, 'characters').find({
         where: {
-            account: id
+            accountId: id
         }
     });
 }

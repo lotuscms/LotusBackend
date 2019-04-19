@@ -1,8 +1,10 @@
-import { Resolver, Query, Arg, Mutation } from 'type-graphql';
+import { Resolver, Query, Arg, Mutation, FieldResolver, Root } from 'type-graphql';
 import { Account } from './model';
 import { getAccountByEmail, createAccount, deleteAccount, updateAccountPassword } from './ops';
 import { AccountCreateArgs, AccountPasswordChangeArgs } from './gqlTypes';
 import { createBnetAccount, deleteBnetAccountById } from '../battlenet_accounts/ops';
+import { Characters } from '../../characters/characters/model';
+import { getCharactersByAccountId } from '../../characters/characters/ops';
 
 @Resolver(of => Account)
 export class AccountResolver {
@@ -30,5 +32,11 @@ export class AccountResolver {
     @Mutation(returns => Boolean)
     async accountPasswordChange(@Arg('args') args: AccountPasswordChangeArgs): Promise<Boolean> {
         return updateAccountPassword(args.email, args.password, args.newPassword);
+    }
+
+    @FieldResolver(returns => [Characters])
+    async characters(@Root() account: Account) {
+        console.log(account.id);
+        return getCharactersByAccountId(account.id);
     }
 }
