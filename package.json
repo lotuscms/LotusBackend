@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "graphql": "^14.2.1",
-    "locutus": "^2.0.10",
     "mysql2": "^1.6.5",
     "type-graphql": "^0.17.1",
     "typedi": "^0.8.0",
@@ -31,7 +30,6 @@
   "devDependencies": {
     "@types/graphql": "^14.2.0",
     "@types/jest": "^23.3.10",
-    "@types/locutus": "0.0.5",
     "@types/moment": "^2.13.0",
     "@types/node": "^10.9.4",
     "@types/node-cache": "^4.1.1",

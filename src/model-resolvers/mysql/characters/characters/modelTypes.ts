@@ -31,17 +31,7 @@ export enum Races {
     WORGEN = RaceMap.worgen.id,
     PANDAREN_NEUTRAL = RaceMap.pandarenNeutral.id,
     PANDAREN_ALLIANCE = RaceMap.pandarenAlliance.id,
-    PANDAREN_HORDE = RaceMap.pandarenHorde.id,
-    NIGHTBORNE = RaceMap.nightborne.id,
-    HIGH_MOUNTAIN_TAUREN = RaceMap.highMountainTauren.id,
-    VOID_ELF = RaceMap.voidElf.id,
-    LIGHTFORGED_DRAENEI = RaceMap.lightForgedDraenei.id,
-    ZANDALARI_TROLL = RaceMap.zandalariTroll.id,
-    KUL_TIRAN = RaceMap.kulTiran.id,
-    THIN_HUMAN = RaceMap.thinHuman.id,
-    DARK_IRON_DAWRF = RaceMap.darkIronDwarf.id,
-    VULPERA = RaceMap.vulpera.id,
-    MAGHAR_ORC = RaceMap.magHarOrc.id
+    PANDAREN_HORDE = RaceMap.pandarenHorde.id
 }
 
 export enum Classes {
@@ -55,8 +45,7 @@ export enum Classes {
     MAGE = ClassMap.mage.id,
     WARLOCK = ClassMap.warlock.id,
     MONK = ClassMap.monk.id,
-    DRUID = ClassMap.druid.id,
-    DEOMN_HUNTER = ClassMap.demonHunter.id
+    DRUID = ClassMap.druid.id
 }
 
 // Register our enums so type-graphql knows about them

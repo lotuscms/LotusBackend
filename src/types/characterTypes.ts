@@ -29,17 +29,7 @@ export const RaceMap: { [name: string]: Race } = {
     humanGilnean: { id: 23, value: 4194304, name: 'Gilnean' },
     pandarenNeutral: { id: 24, value: 8388608, name: 'Pandaren Neutral' },
     pandarenAlliance: { id: 25, value: 16777216, name: 'Pandaren Alliance' },
-    pandarenHorde: { id: 26, value: 33554432, name: 'Pandaren Horde' },
-    nightborne: { id: 27, value: 67108864, name: 'Nightbourne' },
-    highMountainTauren: { id: 28, value: 134217728, name: 'Highmountain Tauren' },
-    voidElf: { id: 29, value: 268435456, name: 'Void Elf' },
-    lightForgedDraenei: { id: 30, value: 536870912, name: 'Lightforged Draenei' },
-    zandalariTroll: { id: 31, value: 1073741824, name: 'Zandalari Troll' },
-    kulTiran: { id: 32, value: 2147483648, name: 'Kul Tiran' },
-    thinHuman: { id: 33, value: 4294967296, name: 'Thin Human' },
-    darkIronDwarf: { id: 34, value: 8589934592, name: 'Dark Iron Dwarf' },
-    vulpera: { id: 35, value: 17179869184, name: 'Vulpera' },
-    magHarOrc: { id: 36, value: 34359738368, name: "Mag'har Orc" }
+    pandarenHorde: { id: 26, value: 33554432, name: 'Pandaren Horde' }
 };
 
 interface Class {
@@ -58,7 +48,5 @@ export const ClassMap: { [name: string]: Class } = {
     mage: { id: 8, value: 128, name: 'Mage' },
     warlock: { id: 9, value: 256, name: 'Warlock' },
     monk: { id: 10, value: 512, name: 'Monk' },
-    druid: { id: 11, value: 1024, name: 'Druid' },
-    demonHunter: { id: 12, value: 2048, name: 'Demon Hunter' },
-    vip: { id: 13, value: 4096, name: 'VIP' }
+    druid: { id: 11, value: 1024, name: 'Druid' }
 };

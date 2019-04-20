@@ -32,24 +32,28 @@ export class Account {
 
     @Column('varchar', {
         nullable: false,
+        default: '',
         name: 'sessionKey'
     })
     sessionKey: string;
 
     @Column('varchar', {
         nullable: false,
+        default: '',
         name: 'v'
     })
     v: string;
 
     @Column('varchar', {
         nullable: false,
+        default: '',
         name: 's'
     })
     s: string;
 
     @Column('varchar', {
         nullable: false,
+        default: '',
         name: 'token_key'
     })
     tokenKey: string;
@@ -109,13 +113,6 @@ export class Account {
     locked?: boolean;
 
     @Column('varchar', {
-        nullable: false,
-        default: '00',
-        name: 'lock_country'
-    })
-    lockCountry?: string;
-
-    @Column('varchar', {
         nullable: true,
         default: null,
         name: 'last_login'
@@ -148,6 +145,7 @@ export class Account {
 
     @Column('varchar', {
         nullable: false,
+        default: '',
         name: 'mutereason'
     })
     @Field()
@@ -155,6 +153,7 @@ export class Account {
 
     @Column('varchar', {
         nullable: false,
+        default: '',
         name: 'muteby'
     })
     @Field()
@@ -170,6 +169,7 @@ export class Account {
 
     @Column('varchar', {
         nullable: false,
+        defaut: '',
         name: 'os'
     })
     @Field()
@@ -182,16 +182,4 @@ export class Account {
     })
     @Field()
     recruiter?: number;
-    @OneToOne(type => BnetAccounts, bnetAccount => bnetAccount.id, { cascade: true })
-    @JoinColumn({ name: 'battlenet_account' })
-    @Field()
-    battleNetAccount: BnetAccounts;
-
-    @Column('varchar', {
-        nullable: true,
-        default: null,
-        name: 'battlenet_index'
-    })
-    @Field()
-    battleNetIndex: number;
 }

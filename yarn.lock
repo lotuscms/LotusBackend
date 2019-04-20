@@ -153,11 +153,6 @@
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.14.tgz#37daaf78069e7948520474c87b80092ea912520a"
   integrity sha512-Q5hTcfdudEL2yOmluA1zaSyPbzWPmJ3XfSWeP3RyoYvS9hnje1ZyagrZOuQ6+1nQC1Gw+7gap3pLNL3xL6UBug==
 
-"@types/locutus@0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@types/locutus/-/locutus-0.0.5.tgz#007f09d350df9181b5d62b634c016076a54f97b6"
-  integrity sha1-AH8J01DfkYG11itjTAFgdqVPl7Y=
-
 "@types/long@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.0.tgz#719551d2352d301ac8b81db732acb6bdc28dbdef"
@@ -3258,11 +3253,6 @@ locate-path@^3.0.0:
   dependencies:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
-
-locutus@^2.0.10:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/locutus/-/locutus-2.0.10.tgz#f903619466a98a4ab76e8b87a5854b55a743b917"
-  integrity sha512-AZg2kCqrquMJ5FehDsBidV0qHl98NrsYtseUClzjAQ3HFnsDBJTCwGVplSQ82t9/QfgahqvTjaKcZqZkHmS0wQ==
 
 lodash.get@^4.4.2:
   version "4.4.2"
