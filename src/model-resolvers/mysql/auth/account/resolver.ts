@@ -1,20 +1,20 @@
-import { Resolver, Query, Arg, Mutation, FieldResolver, Root } from 'type-graphql';
+import { Resolver, Query, Arg, Mutation, FieldResolver, Root, Args } from 'type-graphql';
 import { Account } from './model';
 import { getAccountByUsername, createAccount, deleteAccountById, updateAccountPassword } from './ops';
-import { AccountCreateArgs, AccountPasswordChangeArgs } from './gqlTypes';
+import { AccountRegisterArgs, AccountPasswordChangeArgs } from './gqlTypes';
 import { Characters } from '../../characters/characters/model';
 import { getCharactersByAccountId } from '../../characters/characters/ops';
 
 @Resolver(of => Account)
 export class AccountResolver {
     @Query(returns => Account)
-    accountGetByEmail(@Arg('email') username: string) {
+    accountGetByUsername(@Arg('username') username: string) {
         return getAccountByUsername(username);
     }
 
     @Mutation(returns => Account)
-    async accountRegister(@Arg('args') args: AccountCreateArgs): Promise<Account> {
-        return createAccount(args.username, args.email, args.password, args.expansion);
+    async accountRegister(@Args() { username, email, password }: AccountRegisterArgs): Promise<Account> {
+        return createAccount(username, email, password);
     }
 
     @Mutation(returns => Boolean)
@@ -25,8 +25,10 @@ export class AccountResolver {
     }
 
     @Mutation(returns => Account)
-    async accountPasswordChange(@Arg('args') args: AccountPasswordChangeArgs): Promise<Account> {
-        return updateAccountPassword(args.username, args.password, args.newPassword);
+    async accountPasswordChange(@Args() { username, password, newPassword }: AccountPasswordChangeArgs): Promise<
+        Account
+    > {
+        return updateAccountPassword(username, password, newPassword);
     }
 
     @FieldResolver(returns => [Characters])

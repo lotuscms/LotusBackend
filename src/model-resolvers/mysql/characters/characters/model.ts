@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { Field, ObjectType } from 'type-graphql';
-import { Races, Gender, Classes } from './modelTypes';
+import { Races, Gender, Classes, AtLogin } from './modelTypes';
 
 @Entity('characters')
 @ObjectType()
@@ -275,7 +275,8 @@ export class Characters {
         default: 0,
         name: 'at_login'
     })
-    atLogin: number;
+    @Field(type => AtLogin)
+    atLogin: AtLogin;
 
     @Column('smallint', {
         nullable: false,

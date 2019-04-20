@@ -1,6 +1,5 @@
-import { PrimaryGeneratedColumn, Entity, Column, JoinColumn, OneToOne } from 'typeorm';
+import { PrimaryGeneratedColumn, Entity, Column } from 'typeorm';
 import { Field, ObjectType } from 'type-graphql';
-import { BnetAccounts } from '../battlenet_accounts/model';
 
 // import { Entity } from 'typeorm';
 
@@ -130,7 +129,7 @@ export class Account {
 
     @Column('tinyint', {
         nullable: false,
-        default: 7,
+        default: 3,
         name: 'expansion'
     })
     @Field()
@@ -161,7 +160,7 @@ export class Account {
 
     @Column('varchar', {
         nullable: false,
-        default: 0,
+        default: '',
         name: 'locale'
     })
     @Field()
@@ -169,8 +168,8 @@ export class Account {
 
     @Column('varchar', {
         nullable: false,
-        defaut: '',
-        name: 'os'
+        default: '',
+        name: 'locale'
     })
     @Field()
     os: string;

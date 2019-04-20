@@ -48,6 +48,17 @@ export enum Classes {
     DRUID = ClassMap.druid.id
 }
 
+export enum AtLogin {
+    RENAME = 1,
+    RESET_SPELLS = 2,
+    RESET_TALENTS = 4,
+    CUSTOMIZE = 8,
+    RESET_PET_TALENTS = 16,
+    FIRST = 32,
+    CHANGE_FACTION = 64,
+    CHANGE_RACE = 128
+}
+
 // Register our enums so type-graphql knows about them
 registerEnumType(Gender, {
     name: 'Gender',
@@ -62,4 +73,9 @@ registerEnumType(Races, {
 registerEnumType(Classes, {
     name: 'Classes',
     description: 'The class of the character'
+});
+
+registerEnumType(AtLogin, {
+    name: 'AtLogin',
+    description: 'Flags to be set for actions at next login, sucb as race change, faction change, etc'
 });

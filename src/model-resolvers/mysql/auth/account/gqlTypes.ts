@@ -1,14 +1,13 @@
-import { InputType, Field } from 'type-graphql';
+import { Field, ArgsType } from 'type-graphql';
 
-@InputType()
-export class AccountCreateArgs {
+@ArgsType()
+export class AccountRegisterArgs {
     @Field() username: string;
     @Field() email: string;
     @Field() password: string;
-    @Field() expansion?: number;
 }
 
-@InputType()
+@ArgsType()
 export class AccountPasswordChangeArgs {
     @Field() username: string;
     @Field() password: string;
