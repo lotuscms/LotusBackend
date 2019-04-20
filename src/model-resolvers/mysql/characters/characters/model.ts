@@ -34,13 +34,6 @@ export class Characters {
     @Column('tinyint', {
         nullable: false,
         default: 0,
-        name: 'slot'
-    })
-    slot: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 0,
         name: 'race'
     })
     @Field(type => Races)
@@ -86,82 +79,20 @@ export class Characters {
     @Field()
     money: string;
 
-    @Column('tinyint', {
+    // TODO: Create helper function to read and update these values.
+    @Column('int', {
         nullable: false,
         default: 0,
-        name: 'skin'
+        name: 'playerBytes'
     })
-    skin: number;
+    playerBytes: number; // contains data about the skincolor,facestyle,hairstyle and haircolor of the character
 
-    @Column('tinyint', {
+    @Column('int', {
         nullable: false,
         default: 0,
-        name: 'face'
+        name: 'playerBytes2'
     })
-    face: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 0,
-        name: 'hairStyle'
-    })
-    hairStyle: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 0,
-        name: 'hairColor'
-    })
-    hairColor: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 0,
-        name: 'facialStyle'
-    })
-    facialStyle: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 0,
-        name: 'customDisplay1'
-    })
-    customDisplay1: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 0,
-        name: 'customDisplay2'
-    })
-    customDisplay2: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 0,
-        name: 'customDisplay3'
-    })
-    customDisplay3: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 16,
-        name: 'inventorySlots'
-    })
-    inventorySlots: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 0,
-        name: 'bankSlots'
-    })
-    bankSlots: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 0,
-        name: 'restState'
-    })
-    restState: number;
+    facialHair: number;
 
     @Column('int', {
         nullable: false,
@@ -169,13 +100,6 @@ export class Characters {
         name: 'playerFlags'
     })
     playerFlags: number;
-
-    @Column('int', {
-        nullable: false,
-        default: 0,
-        name: 'playerFlagsEx'
-    })
-    playerFlagsEx: number;
 
     @Column('float', {
         nullable: false,
@@ -214,24 +138,10 @@ export class Characters {
 
     @Column('tinyint', {
         nullable: false,
-        default: 1,
-        name: 'dungeonDifficulty'
+        default: 0,
+        name: 'instance_mode_mask'
     })
-    dungeonDifficulty: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 14,
-        name: 'raidDifficulty'
-    })
-    raidDifficulty: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 3,
-        name: 'legacyRaidDifficulty'
-    })
-    legacyRaidDifficulty: number;
+    instanceModeMask: number;
 
     @Column('float', {
         nullable: false,
@@ -311,13 +221,6 @@ export class Characters {
     })
     resetTalentsTime: number;
 
-    @Column('int', {
-        nullable: false,
-        default: 0,
-        name: 'primarySpecialization'
-    })
-    primarySpecialization: number;
-
     @Column('float', {
         nullable: false,
         default: 0,
@@ -393,6 +296,34 @@ export class Characters {
         name: 'taxi_path'
     })
     taxiPath?: string;
+
+    @Column('int', {
+        nullable: false,
+        default: 0,
+        name: 'arenaPoints'
+    })
+    arenaPoints: number;
+
+    @Column('int', {
+        nullable: false,
+        default: 0,
+        name: 'totalHonorPoints'
+    })
+    totalHonorPoints: number;
+
+    @Column('int', {
+        nullable: false,
+        default: 0,
+        name: 'todayHonorPoints'
+    })
+    todayHonorPoints: number;
+
+    @Column('int', {
+        nullable: false,
+        default: 0,
+        name: 'yesterdayHonorPoints'
+    })
+    yesterdayHonorPoints: number;
 
     @Column('int', {
         nullable: false,
@@ -487,6 +418,13 @@ export class Characters {
     })
     power6: number;
 
+    @Column('int', {
+        nullable: false,
+        default: 0,
+        name: 'power7'
+    })
+    power7: number;
+
     @Column('mediumint', {
         nullable: false,
         default: 0,
@@ -496,17 +434,17 @@ export class Characters {
 
     @Column('tinyint', {
         nullable: false,
-        default: 0,
-        name: 'activeTalentGroup'
+        default: 1,
+        name: 'speccount'
     })
-    activeTalentGroup: number;
+    specCount: number;
 
-    @Column('int', {
+    @Column('tinyint', {
         nullable: false,
         default: 0,
-        name: 'lootSpecId'
+        name: 'activespec'
     })
-    lootSpecId: number;
+    activeSpec: number;
 
     @Column('longtext', {
         nullable: true,
@@ -519,6 +457,13 @@ export class Characters {
         name: 'equipmentCache'
     })
     equipmentCache: string;
+
+    @Column('int', {
+        nullable: false,
+        default: 0,
+        name: 'ammoId'
+    })
+    ammoId: number;
 
     @Column('longtext', {
         nullable: true,
@@ -561,39 +506,4 @@ export class Characters {
     })
     @Field()
     deleteDate: number;
-
-    @Column('int', {
-        nullable: false,
-        default: 0,
-        name: 'honor'
-    })
-    honor: number;
-
-    @Column('int', {
-        nullable: false,
-        default: 1,
-        name: 'honorLevel'
-    })
-    honorLevel: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 2,
-        name: 'honorRestState'
-    })
-    honorRestState: number;
-
-    @Column('float', {
-        nullable: false,
-        default: 0,
-        name: 'honorRestBonus'
-    })
-    honorRestBonus: number;
-
-    @Column('int', {
-        nullable: false,
-        default: 0,
-        name: 'lastLoginBuild'
-    })
-    lastLoginBuild: number;
 }
