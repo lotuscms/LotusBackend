@@ -11,7 +11,9 @@ export function getAccountByUsername(username: string): Promise<Account> {
 
 export function createAccount(username: string, email: string, password: string): Promise<Account> {
     const account = new Account();
-    account.username = username;
+    // Set all the values to UpperCase so we don't have to worry about
+    // mixed case email or usernames.
+    account.username = username.toUpperCase();
     account.email = email.toUpperCase();
     account.regMail = email.toUpperCase();
     account.passwordHash = encryptPassword(username, password);
