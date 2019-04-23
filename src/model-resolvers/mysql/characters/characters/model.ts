@@ -79,20 +79,54 @@ export class Characters {
     @Field()
     money: string;
 
-    // TODO: Create helper function to read and update these values.
-    @Column('int', {
+    @Column('tinyint', {
         nullable: false,
         default: 0,
-        name: 'playerBytes'
+        name: 'skin'
     })
-    playerBytes: number; // contains data about the skincolor,facestyle,hairstyle and haircolor of the character
+    skin: number;
 
-    @Column('int', {
+    @Column('tinyint', {
         nullable: false,
         default: 0,
-        name: 'playerBytes2'
+        name: 'face'
     })
-    facialHair: number;
+    face: number;
+
+    @Column('tinyint', {
+        nullable: false,
+        default: 0,
+        name: 'hairStyle'
+    })
+    hairStyle: number;
+
+    @Column('tinyint', {
+        nullable: false,
+        default: 0,
+        name: 'hairColor'
+    })
+    hairColor: number;
+
+    @Column('tinyint', {
+        nullable: false,
+        default: 0,
+        name: 'facialStyle'
+    })
+    facialStyle: number;
+
+    @Column('tinyint', {
+        nullable: false,
+        default: 0,
+        name: 'bankSlots'
+    })
+    bankSlots: number;
+
+    @Column('tinyint', {
+        nullable: false,
+        default: 0,
+        name: 'restState'
+    })
+    restState: number;
 
     @Column('int', {
         nullable: false,
@@ -432,20 +466,6 @@ export class Characters {
         name: 'latency'
     })
     latency: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 1,
-        name: 'speccount'
-    })
-    specCount: number;
-
-    @Column('tinyint', {
-        nullable: false,
-        default: 0,
-        name: 'activespec'
-    })
-    activeSpec: number;
 
     @Column('longtext', {
         nullable: true,
