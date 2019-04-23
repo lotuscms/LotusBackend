@@ -35,10 +35,9 @@ export async function updateAccountPassword(
     newPassword: string
 ): Promise<Account> {
     const account = await getAccountByUsername(username);
-    const encryptedPassword = encryptPassword(username, oldPassword);
 
-    if (account.passwordHash != encryptedPassword) {
-        throw new Error('Incorrect email or password, please try again!');
+    if (account.passwordHash != encryptPassword(username, oldPassword)) {
+        throw new Error('Incorrect username or password, please try again!');
     }
 
     account.passwordHash = encryptPassword(username, newPassword);
