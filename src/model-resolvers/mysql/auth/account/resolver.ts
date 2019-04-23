@@ -12,6 +12,7 @@ export class AccountResolver {
         return getAccountByUsername(username);
     }
 
+    // TODO: This should actually regsiter a website account and link the gameaccount with it
     @Mutation(returns => Account)
     async accountRegister(@Args() { username, email, password }: AccountRegisterArgs): Promise<Account> {
         return createAccount(username, email, password);

@@ -5,11 +5,12 @@ import {
     setAtLoginFlag,
     getAllCharacters,
     getCharacterByName,
-    getCharacterByGuid
+    getCharacterByGuid,
+    updateCharacterRaceByName
 } from './ops';
 import { Account } from '../../auth/account/model';
 import { getAccountById } from '../../auth/account/ops';
-import { AtLoginArgs } from './gqlTypes';
+import { AtLoginArgs, UpdateCharacterRaceByNameArgs } from './gqlTypes';
 
 @Resolver(of => Characters)
 export class CharactersResolver {
@@ -33,8 +34,13 @@ export class CharactersResolver {
     }
 
     @Mutation(returns => Characters)
-    async characterSetAtLoginFlag(@Args() { guid, name, flag }: AtLoginArgs) {
+    async charactersSetAtLoginFlag(@Args() { guid, name, flag }: AtLoginArgs): Promise<Characters> {
         return setAtLoginFlag(flag, guid, name);
+    }
+
+    @Mutation(returns => Characters)
+    async charactersUpdateRaceByName(@Args() { name, race }: UpdateCharacterRaceByNameArgs): Promise<Characters> {
+        return updateCharacterRaceByName(name, race);
     }
 
     @FieldResolver(returns => Account)

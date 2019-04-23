@@ -4,3 +4,4 @@ conf.json
 logs/
 *.log
 ormconfig.json
+.vscode
