@@ -73,7 +73,6 @@ export class Account {
 
     @Column('timestamp', {
         nullable: false,
-        default: Date.now(),
         name: 'joindate'
     })
     @Field()
@@ -169,7 +168,7 @@ export class Account {
     @Column('varchar', {
         nullable: false,
         default: '',
-        name: 'locale'
+        name: 'os'
     })
     @Field()
     os: string;

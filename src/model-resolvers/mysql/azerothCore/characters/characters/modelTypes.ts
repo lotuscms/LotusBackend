@@ -1,4 +1,4 @@
-import { RaceMap, ClassMap } from '../../../../types/characterTypes';
+import { RaceMap, ClassMap } from '../../../../../types/characterTypes';
 import { registerEnumType } from 'type-graphql';
 
 export enum Gender {

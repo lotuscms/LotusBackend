@@ -1,8 +1,8 @@
 import { getRepository } from 'typeorm';
 import { Characters } from './model';
 import { Races, AtLogin } from './modelTypes';
-import { isSomething, isNothing } from '../../../../utils/misc';
-import { connections } from '../../../../config';
+import { isSomething, isNothing } from '../../../../../utils/misc';
+import { connections } from '../../../../../config';
 
 const connectionName = connections.characters;
 

@@ -1,7 +1,7 @@
 import { getRepository, DeleteResult } from 'typeorm';
 import { Account } from './model';
-import { encryptPassword } from '../../../../utils/crypto';
-import { connections } from '../../../../config';
+import { encryptPassword } from '../../../../../utils/crypto';
+import { connections } from '../../../../../config';
 
 const connectionName = connections.auth;
 

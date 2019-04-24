@@ -1,16 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, Column } from 'typeorm';
 import { Field, ObjectType } from 'type-graphql';
 import { Races, Gender, Classes, AtLogin } from './modelTypes';
 
 @Entity('characters')
 @ObjectType()
 export class Characters {
-    @PrimaryGeneratedColumn()
     @Column('bigint', {
         generated: true,
         nullable: false,
         primary: true,
-        default: 0,
         name: 'guid'
     })
     @Field()
