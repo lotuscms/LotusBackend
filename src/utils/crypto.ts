@@ -15,3 +15,18 @@ export function hashSha1(email: string, password: string) {
         .digest('hex')
         .toUpperCase();
 }
+
+interface IHashedPassword {
+    salt: string;
+    hashedPassword: string;
+}
+
+export function hashPassword(password: string): IHashedPassword {
+    const salt = crypto.randomBytes(16).toString('base64');
+    const hashedPassword = crypto
+        .createHash('sha256')
+        .update(password + salt)
+        .digest('hex');
+
+    return { salt, hashedPassword };
+}
