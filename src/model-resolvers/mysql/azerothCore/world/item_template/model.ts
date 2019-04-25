@@ -1,10 +1,10 @@
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 import { ObjectType, Field } from 'type-graphql';
 
 @Entity('item_template')
 @ObjectType()
 export class ItemTemplate {
-    @Column('mediumint', {
+    @PrimaryColumn('mediumint', {
         nullable: false,
         default: 0,
         name: 'entry'

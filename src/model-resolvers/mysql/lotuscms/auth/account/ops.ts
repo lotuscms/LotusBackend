@@ -1,9 +1,9 @@
 import { Account } from './model';
-import * as GameAccount from '../../../azerothCore/auth/account/model';
+import { GameAccount } from '../../../azerothCore/auth/account/model';
 import { hashPassword } from '../../../../../utils/crypto';
 import { getRepository } from 'typeorm';
 import { connections } from '../../../../../config';
-import { createAccount } from 'model-resolvers/mysql/azerothCore/auth/account/ops';
+import { createAccount } from '../../../azerothCore/auth/account/ops';
 
 const connectionName = connections.lotuscms;
 const authConnectionName = connections.auth;
@@ -31,6 +31,6 @@ export async function registerAccount(email: string, username: string, password:
     account.gameAccountId = gameAccount.id;
     account.joinDate = new Date();
 
-    getRepository(GameAccount.Account, authConnectionName).save(gameAccount);
+    getRepository(GameAccount, authConnectionName).save(gameAccount);
     return getRepository(Account, connectionName).save(account);
 }

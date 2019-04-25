@@ -8,7 +8,7 @@ import {
     getCharacterByGuid,
     updateCharacterRaceByName
 } from './ops';
-import { Account } from '../../auth/account/model';
+import { GameAccount } from '../../auth/account/model';
 import { getAccountById } from '../../auth/account/ops';
 import { AtLoginArgs, UpdateCharacterRaceByNameArgs } from './gqlTypes';
 
@@ -43,7 +43,7 @@ export class CharactersResolver {
         return updateCharacterRaceByName(name, race);
     }
 
-    @FieldResolver(returns => Account)
+    @FieldResolver(returns => GameAccount)
     async account(@Root() characters: Characters) {
         return await getAccountById(characters.accountId);
     }

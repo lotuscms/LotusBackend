@@ -1,11 +1,9 @@
 import { PrimaryGeneratedColumn, Entity, Column } from 'typeorm';
 import { Field, ObjectType } from 'type-graphql';
 
-// import { Entity } from 'typeorm';
-
 @Entity('account')
 @ObjectType()
-export class Account {
+export class GameAccount {
     @PrimaryGeneratedColumn()
     @Column('bigint', {
         generated: true,

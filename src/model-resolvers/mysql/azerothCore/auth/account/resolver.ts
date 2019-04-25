@@ -1,20 +1,20 @@
 import { Resolver, Query, Arg, Mutation, FieldResolver, Root, Args } from 'type-graphql';
-import { Account } from './model';
+import { GameAccount } from './model';
 import { getAccountByUsername, createAccount, deleteAccountById, updateAccountPassword } from './ops';
 import { AccountRegisterArgs, AccountPasswordChangeArgs } from './gqlTypes';
 import { Characters } from '../../characters/characters/model';
 import { getCharactersByAccountId } from '../../characters/characters/ops';
 
-@Resolver(of => Account)
+@Resolver(of => GameAccount)
 export class AccountResolver {
-    @Query(returns => Account)
+    @Query(returns => GameAccount)
     accountGetByUsername(@Arg('username') username: string) {
         return getAccountByUsername(username);
     }
 
     // TODO: This should actually regsiter a website account and link the gameaccount with it
-    @Mutation(returns => Account)
-    async accountRegister(@Args() { username, email, password }: AccountRegisterArgs): Promise<Account> {
+    @Mutation(returns => GameAccount)
+    async accountRegister(@Args() { username, email, password }: AccountRegisterArgs): Promise<GameAccount> {
         return createAccount(username, email, password);
     }
 
@@ -25,15 +25,15 @@ export class AccountResolver {
         return acctDelete.affected > 0;
     }
 
-    @Mutation(returns => Account)
+    @Mutation(returns => GameAccount)
     async accountPasswordChange(@Args() { username, password, newPassword }: AccountPasswordChangeArgs): Promise<
-        Account
+        GameAccount
     > {
         return updateAccountPassword(username, password, newPassword);
     }
 
     @FieldResolver(returns => [Characters])
-    async characters(@Root() account: Account) {
+    async characters(@Root() account: GameAccount) {
         return getCharactersByAccountId(account.id);
     }
 }

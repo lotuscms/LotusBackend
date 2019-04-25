@@ -1,7 +1,7 @@
 import { Resolver, Query, Arg, Mutation, Args } from 'type-graphql';
 import { Account } from './model';
 import { getAccountByEmail, getAccountByUsername, getAllAccounts, registerAccount } from './ops';
-import { AccountRegisterArgs } from 'model-resolvers/mysql/azerothCore/auth/account/gqlTypes';
+import { AccountRegisterArgs } from './gqlTypes';
 
 @Resolver(of => Account)
 export class AccountResolver {
