@@ -21,7 +21,7 @@ export class AccountResolver {
     }
 
     @Mutation(returns => Account)
-    AccountRegisterArgs(@Args() { email, username, password }: AccountRegisterArgs): Promise<Account> {
+    accountRegister(@Args() { email, username, password }: AccountRegisterArgs): Promise<Account> {
         return registerAccount(email, username, password);
     }
 }
