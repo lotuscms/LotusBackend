@@ -4,6 +4,6 @@ import { getRepository } from 'typeorm';
 
 const connectionName = connections.world;
 
-export function getItemByEntry(entry: number): Promise<ItemTemplate> {
+export function getItemTemplateByEntry(entry: number): Promise<ItemTemplate> {
     return getRepository(ItemTemplate, connectionName).findOne({ where: { entry } });
 }
