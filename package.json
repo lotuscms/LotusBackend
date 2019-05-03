@@ -9,6 +9,7 @@
   "private": false,
   "scripts": {
     "start": "yarn watch",
+    "start-prod": "ts-node -T ./src/index.ts",
     "format": "prettier --write \"src/**/*.ts\"",
     "clean-build": "rm -rf build",
     "build": "node barrel.js && yarn build-ts",
