@@ -8,7 +8,8 @@ export async function apolloStartup(port?: number) {
 
     // FIXME: Breaks because there are no resolver present
     const schema = await buildSchema({
-        resolvers
+        resolvers,
+        validate: false
         // authChecker: ({ context }: { context }, roles) => {} // TODO: Implment this with login
     });
     const apolloServer = new ApolloServer({
