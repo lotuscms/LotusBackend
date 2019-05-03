@@ -28,21 +28,21 @@
     "typeorm": "^0.2.16",
     "typeorm-typedi-extensions": "^0.2.3",
     "ts-node": "^7.0.1",
-    "apollo-server": "^2.4.8"
-  },
-  "devDependencies": {
+    "apollo-server": "^2.4.8",
+    "typescript": "^3.3.3333",
     "@types/graphql": "^14.2.0",
     "@types/jest": "^23.3.10",
     "@types/moment": "^2.13.0",
     "@types/node": "^10.9.4",
-    "@types/node-cache": "^4.1.1",
+    "@types/node-cache": "^4.1.1"
+  },
+  "devDependencies": {
     "concurrently": "3.5.1",
     "jest": "^23.6.0",
     "nodemon": "^1.18.7",
     "pbjs": "0.0.5",
     "prettier": "^1.14.2",
     "ts-jest": "^23.10.5",
-    "tslint": "^5.11.0",
-    "typescript": "^3.3.3333"
+    "tslint": "^5.11.0"
   }
 }
