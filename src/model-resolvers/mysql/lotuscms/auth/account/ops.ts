@@ -5,7 +5,7 @@ import { getRepository } from 'typeorm';
 import { connections } from '../../../../../config';
 import { createAccount } from '../../../azerothCore/auth/account/ops';
 
-const connectionName = connections.lotuscms;
+const connectionName = connections.lotusCms;
 const authConnectionName = connections.auth;
 
 export function getAllAccounts(): Promise<Account[]> {
