@@ -1,4 +1,7 @@
 import * as crypto from 'crypto';
+import { isNothing } from './misc';
+
+export const jwtSecret = 'L0tu$Cm$_$3Cr3t';
 
 export function encryptPassword(username: string, password: string): string {
     return crypto
@@ -21,12 +24,19 @@ interface IHashedPassword {
     hashedPassword: string;
 }
 
-export function hashPassword(password: string): IHashedPassword {
-    const salt = crypto.randomBytes(16).toString('base64');
+export function hashPassword(password: string, salt?: string): IHashedPassword {
+    if (isNothing(salt)) {
+        salt = crypto.randomBytes(16).toString('base64');
+    }
     const hashedPassword = crypto
         .createHash('sha256')
         .update(password + salt)
         .digest('hex');
 
     return { salt, hashedPassword };
+}
+
+export function matchHashedPassword(passwordHash: string, salt: string, password: string): boolean {
+    const { hashedPassword } = hashPassword(password, salt);
+    return passwordHash === hashedPassword;
 }

@@ -21,20 +21,22 @@
     "ts-node": "ts-node ./src/index.ts"
   },
   "dependencies": {
+    "@types/graphql": "^14.2.0",
+    "@types/jest": "^23.3.10",
+    "@types/jsonwebtoken": "^8.3.2",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^10.9.4",
+    "@types/node-cache": "^4.1.1",
+    "apollo-server": "^2.4.8",
     "graphql": "^14.2.1",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^1.6.5",
+    "ts-node": "^7.0.1",
     "type-graphql": "^0.17.1",
     "typedi": "^0.8.0",
     "typeorm": "^0.2.16",
     "typeorm-typedi-extensions": "^0.2.3",
-    "ts-node": "^7.0.1",
-    "apollo-server": "^2.4.8",
-    "typescript": "^3.3.3333",
-    "@types/graphql": "^14.2.0",
-    "@types/jest": "^23.3.10",
-    "@types/moment": "^2.13.0",
-    "@types/node": "^10.9.4",
-    "@types/node-cache": "^4.1.1"
+    "typescript": "^3.3.3333"
   },
   "devDependencies": {
     "concurrently": "3.5.1",
